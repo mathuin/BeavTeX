@@ -1,0 +1,80 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass beavtexchapter
+\language english
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 1
+\use_numerical_citations 0
+\paperorientation portrait
+\leftmargin 30mm
+\topmargin 35mm
+\rightmargin 30mm
+\bottommargin 35mm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Using The LyX Layouts
+\layout Standard
+
+There are two layout files for LyX, one for chapters, one for the master
+ document.
+ To use a layout, go to 
+\family sans 
+Layout\SpecialChar \menuseparator
+Document
+\family default 
+ and choose 
+\noun on 
+beavtex,
+\noun default 
+ either 
+\noun on 
+master
+\noun default 
+, for the main document or 
+\noun on 
+chapter
+\noun default 
+ for individual chapters.
+ 
+\layout Standard
+
+I chose this design because I thought people would benefit from having a
+ separation between all of the information necessary for the pretext pages,
+ and the information necessary for the chapters.
+ The information on the pretext pages can then be forgotten, as you work
+ on files that are specific to either the rest of your thesis (all chapters
+ can be included in one file) or to a particular chapter (each chapter/section
+ can have its own file).
+\layout Standard
+
+In LyX, you can include individual chapter by using 
+\family sans 
+Insert\SpecialChar \menuseparator
+Include File.
+
+\family default 
+ Make sure that you check include (as opposed to input, unless you desire
+ this LaTeX option) in the dropdown menu of the popup window.
+\layout Standard
+
+\SpecialChar \ldots{}
+
+\the_end

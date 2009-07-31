@@ -1,0 +1,1782 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass beavtexchapter
+\language english
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 1
+\use_numerical_citations 0
+\paperorientation portrait
+\leftmargin 30mm
+\topmargin 35mm
+\rightmargin 30mm
+\bottommargin 35mm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Standard
+
+
+\begin_inset ERT
+status Open
+
+\layout Standard
+
+\backslash 
+headingpage{Using 
+\backslash 
+beavtex }{John W. Metta, Leslie A. Aamport and Donald K. Nuth}{Journal of 
+\backslash 
+LaTeX{}
+\backslash 
+ Fun}{Oregon State University
+\backslash 
+
+\backslash 
+Corvallis, Oregon}{Vol. 4, Num 5, pp. 234-345}
+\end_inset 
+
+
+\layout Chapter
+
+Using 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+
+\layout Standard
+
+The first thing you should notice about 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+ is this documentation.
+ It is formatted in the manner of a dual masters thesis.
+ Even the previous page is a cover page for those who choose manuscript
+ style and have published a chapter before presenting their thesis.
+ Most (it should be all, but I may have missed some) formatting requirements
+ of the Oregon State thesis guide have been taken care of, and the design
+ of this documentation is such that many optional requirements are used
+ so that you have an example.
+\layout Section
+
+Loading the class
+\layout Standard
+
+The basic options of 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+ are similiar to those in any class, and 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+ itself is based on the book class.
+ Thus, you can load the class with
+\layout LyX-Code
+
+
+\backslash 
+documentclass[opts]{beavtex}
+\layout Standard
+
+and any options that you pass as 
+\family typewriter 
+opts
+\family default 
+ and that 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+ does not recognize, will go straight on to the book class.
+ Thus, if you want to format your thesis to print on both sides of the page,
+ you would load the class as
+\layout LyX-Code
+
+
+\backslash 
+documentclass[twoside]{beavtex}
+\layout Standard
+
+Since 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+ does not recognize the 
+\family typewriter 
+twoside
+\family default 
+ option, it will pass to the underlying book class.
+ 
+\layout List
+\labelwidthstring 00.00.0000
+
+Margins The graduate school requires margins that are 1.5 inch left and 1
+ inch elsewhere 
+\emph on 
+at a minimum
+\emph default 
+.
+ They recommend 1.7 inch left.
+ 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+ natively sets a 1.7 inch left margin, which you can change to 1.5 inch by
+ using the option 
+\family typewriter 
+\noun on 
+1.5
+\family default 
+\noun default 
+.
+ Regardless of your choice of inner margin, 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+ will set your outer margins at 1.1 inch, to assure that your document conforms
+ to the graduate school requirements.
+\layout List
+\labelwidthstring 00.00.0000
+
+Font\SpecialChar ~
+Size You may use the options 
+\family typewriter 
+12pt
+\family default 
+,
+\noun on 
+ 
+\family typewriter 
+\noun default 
+11pt
+\family default 
+,
+\noun on 
+ 
+\noun default 
+and
+\noun on 
+ 
+\family typewriter 
+\noun default 
+10pt
+\family default 
+ to set the base font size.
+ The default is a 12 point font.
+ 
+\layout Standard
+
+As an example, to print on both sides with a 1.5 inch inner margin and an
+ 11 point font, use:
+\layout LyX-Code
+
+
+\backslash 
+documentclass[twoside,1.5,11pt]{beavtex}
+\layout Standard
+
+and the class will load, passing the 
+\family typewriter 
+twoside
+\family default 
+ option to the book class.
+\layout Section
+
+Basic Commands
+\layout Standard
+
+Since 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+ was designed to take care of all the pretext page formatting automagically,
+ you should only need to give it the basic information.
+ All of the following commands should be written as:
+\layout LyX-Code
+
+
+\backslash 
+command{This is what you want printed}
+\layout Standard
+
+Most commands have a LyX counterpart in the master layout file (the chapter
+ layout file holds no 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+ commands) and are noted below.
+\layout Standard
+
+
+\emph on 
+Commands with no LyX counterpart can still be used in LyX easily by using
+ 
+\family sans 
+Layout\SpecialChar \menuseparator
+Document
+\family default 
+ and adding them to the preamble.
+\layout Subsection
+
+Mandatory Commands
+\layout Standard
+
+All mandatory commands have LyX counterparts.
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+title
+\family default 
+ This is the title of your thesis.
+ If your title is very long, you will be interested in the optional command
+ 
+\family typewriter 
+
+\backslash 
+twotitle
+\family default 
+, given below.
+ 
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+author
+\family default 
+ In short, you.
+ Do not use the LaTeX 
+\family typewriter 
+\series bold 
+\noun on 
+
+\backslash 
+and
+\family default 
+\series default 
+\noun default 
+ command.
+ Ideally, your thesis should be one author only.
+ If you must use more than one author, you can simply type something like:
+\begin_deeper 
+\layout LyX-Code
+
+
+\backslash 
+author{U.R.
+ Wise and I.M.
+ Dumb}
+\end_deeper 
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+major
+\family default 
+ The official name of your major, such as Geography, or Bioresource Engineering.
+ Two majors are allowed (See Sections\SpecialChar ~
+
+\begin_inset LatexCommand \ref{sub:Optional-Commands}
+
+\end_inset 
+
+ and\SpecialChar ~
+
+\begin_inset LatexCommand \ref{sec:Advanced-Options}
+
+\end_inset 
+
+).
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+department
+\family default 
+ The name of your department, such as Geosciences or Bioengineering.
+ Two departments are allowed (See Sections\SpecialChar ~
+
+\begin_inset LatexCommand \ref{sub:Optional-Commands}
+
+\end_inset 
+
+ and\SpecialChar ~
+
+\begin_inset LatexCommand \ref{sec:Advanced-Options}
+
+\end_inset 
+
+).
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+advisor
+\family default 
+ The full name (including middle initial) of your advisor.
+ Two co-advisors are allowed (See Sections\SpecialChar ~
+
+\begin_inset LatexCommand \ref{sub:Optional-Commands}
+
+\end_inset 
+
+ and\SpecialChar ~
+
+\begin_inset LatexCommand \ref{sec:Advanced-Options}
+
+\end_inset 
+
+).
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+degree
+\family default 
+ This will be something like 
+\begin_inset Quotes eld
+\end_inset 
+
+Masters of Science
+\begin_inset Quotes erd
+\end_inset 
+
+ or 
+\begin_inset Quotes eld
+\end_inset 
+
+Doctor of Philosophy
+\begin_inset Quotes erd
+\end_inset 
+
+.
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+doctype
+\family default 
+ The document type is probably either 
+\begin_inset Quotes eld
+\end_inset 
+
+Thesis
+\begin_inset Quotes erd
+\end_inset 
+
+ or 
+\begin_inset Quotes eld
+\end_inset 
+
+Dissertation,
+\begin_inset Quotes erd
+\end_inset 
+
+ though you may define your own, such as 
+\begin_inset Quotes eld
+\end_inset 
+
+Project
+\begin_inset Quotes erd
+\end_inset 
+
+ or 
+\begin_inset Quotes eld
+\end_inset 
+
+Presentation
+\begin_inset Quotes erd
+\end_inset 
+
+.
+ 
+\emph on 
+(LyX: Document Type)
+\emph default 
+.
+\layout Subsubsection
+
+Default Commands
+\layout Standard
+
+These commands are either optional, or are mandatory but have default values
+ built in.
+ Not all have LyX counterparts.
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+abstract
+\family default 
+ This should be the 
+\emph on 
+text
+\emph default 
+ of the abstract only--- the formal stuff is preformatted.
+ The abstract is formatted on the first page of the thesis.
+ If for some reason, you do not need an abstract, the abstract will still
+ be formatted, but you needn't print the first page.
+ This page does not get numbered, so will not affect numbering of subsequent
+ pages if you discard it.
+
+\emph on 
+ (LyX)
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+submitdate
+\family default 
+ The submission date of your thesis.
+ This value defaults to 
+\family typewriter 
+
+\backslash 
+today
+\family default 
+ if it is not present, but you can enter whatever day you wish.
+ This is the date printed on the abstract and signature pages.
+
+\emph on 
+ (LyX: Submission Date)
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+copyrightyear
+\family default 
+ This is the year of your document's copyright.
+ It defaults to the current year (
+\family typewriter 
+
+\backslash 
+the
+\backslash 
+year
+\family default 
+), but can be changed.
+
+\emph on 
+ (LyX)
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+commencementyear
+\family default 
+ The year of your commencement.
+ Default is the current year.
+ 
+\emph on 
+(LyX)
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+depthead
+\family default 
+ This is the title of the head of your department, school, whatever.
+ It defaults to 
+\begin_inset Quotes eld
+\end_inset 
+
+Chair,
+\begin_inset Quotes erd
+\end_inset 
+
+ but you can use 
+\begin_inset Quotes eld
+\end_inset 
+
+Head,
+\begin_inset Quotes erd
+\end_inset 
+
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+Dean
+\begin_inset Quotes erd
+\end_inset 
+
+ or whatever you want.
+ 
+\emph on 
+(No LyX)
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+depttype
+\family default 
+ This is the type of the department.
+ It defaults to 
+\begin_inset Quotes eld
+\end_inset 
+
+Department,
+\begin_inset Quotes erd
+\end_inset 
+
+ but 
+\begin_inset Quotes eld
+\end_inset 
+
+School,
+\begin_inset Quotes erd
+\end_inset 
+
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+College,
+\begin_inset Quotes erd
+\end_inset 
+
+ etc.
+ are sometimes necessary.
+ 
+\emph on 
+(No LyX)
+\layout Subsection
+
+Optional Commands
+\begin_inset LatexCommand \label{sub:Optional-Commands}
+
+\end_inset 
+
+
+\layout Standard
+
+Some optional reqirements, including some for those who are dual majors.
+ Many of these options were used to format this documentation, so that you
+ can see how they look.
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+twotitle
+\family default 
+ If your title is long, it will overrun the margin on the abstract page.
+ This is a serious TeX problem, that is even mentioned in the TeXbook as
+ being difficult at best to solve\SpecialChar ~
+
+\begin_inset LatexCommand \citep{knuth.84:TeXbook}
+
+\end_inset 
+
+.
+ For this reason, you should format your title completely with the 
+\family typewriter 
+\noun on 
+
+\backslash 
+
+\noun default 
+title
+\family default 
+ command, then view the dvi or pdf file to see where your title should have
+ a line break.
+ You can then put the portion of your title after the point of a necessary
+ linebreak into this command, and it will look fine.
+ This does not affect the titlepage or anything else, so if you are not
+ formatting an abstract, you needn't worry about using 
+\family typewriter 
+
+\backslash 
+twotitle
+\family default 
+.
+ (
+\emph on 
+LyX: Second Title)
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+coadvisor
+\family default 
+ Your co-advisor, or your second advisor if you are a dual/double major.
+ (
+\emph on 
+LyX)
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+twomajor
+\family default 
+ This is your second major if you are a dual/double major.
+ (
+\emph on 
+LyX: Second Major)
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+twodepartment
+\family default 
+ Likewise for your department.
+ (
+\emph on 
+LyX: Second Department)
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+twodepthead
+\family default 
+ The title of the head of your second department.
+ (
+\emph on 
+No LyX)
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+twodepttype
+\family default 
+ The type of your second department.
+ (
+\emph on 
+No LyX)
+\layout Subsubsection
+
+Optional pages
+\layout Standard
+
+The following pages only print if you use the commands.
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+acknowledgements
+\family default 
+ These are your acknowledgements usually in paragraph form, but formatted
+ however you like.
+ (
+\emph on 
+LyX)
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+preface
+\family default 
+ Your preface.
+ (
+\emph on 
+LyX)
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+dedication
+\family default 
+ Your dedications page.
+ (
+\emph on 
+LyX)
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+contributors
+\family default 
+ For manuscript format, these are the contributions of other workers/authors.
+ (
+\emph on 
+LyX)
+\layout Section
+
+Advanced Options
+\begin_inset LatexCommand \label{sec:Advanced-Options}
+
+\end_inset 
+
+
+\layout Standard
+
+There are many small things that can be different from project to project,
+ and thus much that is unique to each thesis/dissertation.
+ I've tried to capture all that I found here.
+ Those that are not here, you may have to add yourself or contact me and
+ I can probably add them.
+ 
+\emph on 
+None of these commands have LyX counterparts, all of them must go into the
+ preamble.
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+chapword
+\family default 
+ This is the name (not the title) of all chapters.
+ It defaults to blank, which will just print a chapter number.
+ For an example, this document uses the command
+\begin_deeper 
+\layout LyX-Code
+
+
+\backslash 
+chapword{
+\backslash 
+beavtex Chapter}
+\layout Standard
+
+so that you can see what it looks like to change the word.
+\end_deeper 
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+chapheadsep
+\family default 
+ This is a field which separates the chapter number and the chapter title.
+ It defaults to a space and a double hyphen as in 
+\begin_inset Quotes eld
+\end_inset 
+
+Chapter 1 -- Some Title,
+\begin_inset Quotes erd
+\end_inset 
+
+ but you can choose to make this a single period with
+\begin_deeper 
+\layout LyX-Code
+
+
+\backslash 
+chapheadsep{.}
+\layout Standard
+
+which would read 
+\begin_inset Quotes eld
+\end_inset 
+
+Chapter 1.
+ Some Title.
+\begin_inset Quotes erd
+\end_inset 
+
+ unless 
+\family typewriter 
+
+\backslash 
+chapword
+\family default 
+ is not defined, in which case it would read 
+\begin_inset Quotes eld
+\end_inset 
+
+1.
+ Some Title.
+\begin_inset Quotes erd
+\end_inset 
+
+
+\end_deeper 
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+nopretext
+\family default 
+ Often, during the writing of your thesis, you may want to check out how
+ the formatting looks or proof-read it as a document.
+ For this, it may be cumbersome to print all of the pretext pages only to
+ ignore them and have to scroll past them to get to your thesis.
+ using the option
+\begin_deeper 
+\layout LyX-Code
+
+
+\backslash 
+nopretext{}
+\layout Standard
+
+will force LaTeX to ignore all of the pages that come before your table
+ of contents.
+\end_deeper 
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+depthoftoc
+\family default 
+ This controls how many levels of sections and subsections are listed in
+ the Table of Contents.
+ The number defines levels 
+\emph on 
+below
+\emph default 
+ the chapter level.
+ It defaults to 2, meaning that sections and subsections will be listed
+ in the TOC.
+ If you want, for instance, subsubsection and paragraph headings, you would
+ use
+\begin_deeper 
+\layout LyX-Code
+
+
+\backslash 
+depthoftoc{4}
+\layout Standard
+
+which may be quite busy and awkward, but it's your thesis, not mine.
+ This also comes in handy in context with the 
+\family typewriter 
+
+\backslash 
+nopretext{}
+\family default 
+ option, since you can set the depth to zero and only print chapter names,
+ ensuring that you don't need to scroll through a long TOC to read your
+ text.
+ You can also comment out the 
+\family typewriter 
+
+\backslash 
+tableofcontents
+\family default 
+ command to avoid printing it at all.
+\end_deeper 
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+smallitem
+\family default 
+ An itemize environment that is used exactly like the LaTeX 
+\family typewriter 
+
+\backslash 
+itemize
+\family default 
+, but which has smaller spaces between the text.
+\begin_deeper 
+\layout Itemize
+
+This is a list with the normal 
+\family typewriter 
+
+\backslash 
+itemize
+\family default 
+ environment.
+\layout Itemize
+
+It has rather large spacing between the items.
+\layout Standard
+
+versus the 
+\family typewriter 
+
+\backslash 
+smallitem
+\family default 
+ environment
+\layout Small Itemize
+
+The 
+\family typewriter 
+
+\backslash 
+smallitem
+\family default 
+ environment
+\layout Small Itemize
+
+has smaller spaces between each item.
+\end_deeper 
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+smallenum
+\family default 
+ This is an enumerate environtment that is used exactly like the LaTeX 
+\family typewriter 
+
+\backslash 
+enumerate
+\family default 
+, but which has spacing like 
+\family typewriter 
+
+\backslash 
+smallitem
+\family default 
+.
+\begin_deeper 
+\layout Small Enumerate
+
+Like the 
+\family typewriter 
+
+\backslash 
+smallitem
+\family default 
+ environtment,
+\layout Small Enumerate
+
+the 
+\family typewriter 
+
+\backslash 
+smallenum
+\family default 
+ environment
+\layout Small Enumerate
+
+is similiarly spaced.
+\end_deeper 
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+headingpage
+\family default 
+ For those using the manuscript layout, there is the possibility that you
+ have published a chapter of your thesis prior to submitting it to the graduate
+ school.
+ These chapters require a cover page (as in the beginning of this chapter)
+ stating the title of paper (this must match the chapter title exactly!),
+ the authors, and the journal information.
+ This page can be automagically formatted with a single command:
+\begin_deeper 
+\layout LyX-Code
+
+
+\backslash 
+headingpage{Title}{Authors}{Journal Title}{Journal address}
+\newline 
+{Issue Information}
+\layout Standard
+
+where any of the fields can include a newline in the form of a LaTeX double
+ slash (
+\family typewriter 
+
+\backslash 
+
+\backslash 
+
+\family default 
+).
+ This command must come before the chapter title in the document.
+ For LyX users: Use the TeX entry method, which is the standard method that
+ TeX/LaTeX commands are entered.
+ Again, do not use 
+\family typewriter 
+
+\backslash 
+and
+\family default 
+ in the author list.
+ 
+\end_deeper 
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+bigfloatskip
+\family default 
+ This is an option for setting a wider separation for floats.
+ It defaults to false, but you may use
+\begin_deeper 
+\layout LyX-Code
+
+
+\backslash 
+bigfloatskip{true}
+\layout Standard
+
+to have 42pt, vs.
+ 20pt spacing.
+\end_deeper 
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+begin{figure}
+\family default 
+ Figures are placed in your document with
+\begin_deeper 
+\layout LyX-Code
+
+
+\backslash 
+begin{figure}
+\backslash 
+end{figure} 
+\layout Standard
+
+This will also allow for a separate list of figures to be included in your
+ Table of Context.
+ If you have enough figures that you require them to be in an appendix,
+ use
+\layout LyX-Code
+
+
+\backslash 
+begin{afigure}
+\backslash 
+end{afigure}
+\end_deeper 
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+listoffigures
+\family default 
+ This works exactly as it should.
+ It puts a List of Figures, formatted just as the Table of Contents.
+ To use it, place
+\begin_deeper 
+\layout LyX-Code
+
+
+\backslash 
+listoffigures
+\backslash 
+clearpage
+\layout Standard
+
+immediately after the TOC.
+ You can also use
+\layout LyX-Code
+
+
+\backslash 
+listofappendixfigures
+\backslash 
+clearpage
+\layout Standard
+
+to format a list of figures that have been inserted with 
+\family typewriter 
+
+\backslash 
+begin{afigure}
+\family default 
+.
+\end_deeper 
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+begin{table}
+\family default 
+ This works the same as 
+\family typewriter 
+
+\backslash 
+begin{figure}
+\family default 
+ above.
+ Use 
+\family typewriter 
+
+\backslash 
+begin{atable}
+\family default 
+ for appendix tables.
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+listoftables
+\family default 
+ This works the same as
+\family typewriter 
+ 
+\backslash 
+listoffigures
+\family default 
+ above.
+ Use 
+\family typewriter 
+
+\backslash 
+listofappendixtables
+\family default 
+ to list appendix tables.
+\layout Subsection
+
+Line Spacing Options
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+ uses the default LaTeX linespacing.
+ The commands are 
+\family typewriter 
+
+\backslash 
+singlespacing
+\family default 
+ (this is the default), 
+\family typewriter 
+
+\backslash 
+onehalfspacing
+\family default 
+ and 
+\family typewriter 
+
+\backslash 
+doublespacing
+\family default 
+.
+ In order to set your thesis in doublespace type, issue the 
+\family typewriter 
+
+\backslash 
+doublespacing
+\family default 
+ command in the preamble.
+\layout Standard
+
+When you reset the spacing, two important things will be reset.
+ Your Table of Contents and your Bibliography (and index, etc.
+ if you include them).
+ If you want these single spaced, put them in a 
+\family typewriter 
+singlespacing
+\family default 
+ environment as so
+\layout LyX-Code
+
+
+\backslash 
+begin{singlespacing}
+\backslash 
+tableofcontents{}
+\backslash 
+end{singlespacing}
+\layout Standard
+
+Likewise, for your bibliography, you would use something like
+\layout LyX-Code
+
+
+\backslash 
+begin{singlespacing}
+\layout LyX-Code
+
+
+\backslash 
+bibliographystyle{jawra}
+\layout LyX-Code
+
+
+\backslash 
+clearpage
+\backslash 
+addcontentsline{toc}{chapter}{Bibliography}
+\layout LyX-Code
+
+
+\backslash 
+bibliography{bibfile}
+\layout LyX-Code
+
+
+\backslash 
+end{singlespacing}
+\layout Standard
+
+Keep in mind, that you can singlespace virtually anything you want this
+ way, by starting with 
+\family typewriter 
+
+\backslash 
+begin{singlespacing}
+\family default 
+ and ending with 
+\family typewriter 
+
+\backslash 
+end{singlespacing}
+\family default 
+.
+ For instance:
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+begin{singlespacing}
+\end_inset 
+
+
+\layout Small Itemize
+
+This is a list of items
+\layout Small Itemize
+
+with the smallitem environment.
+\layout Small Itemize
+
+and I want to make them print with single spacing
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+end{singlespacing}
+\end_inset 
+
+
+\layout Subsection
+
+Controlling Page Alignment
+\layout Standard
+
+The optional pages (abstract, acknowlegements, contributors, dedication
+ and preface) as well as the body of the text can be aligned as you see
+ fit.
+ The default is a justified body and left-aligned optional pages, but some
+ users may wish to change these settings.
+ 
+\emph on 
+All page alignment settings go into the preamble.
+\layout Subsubsection
+
+Body Alignment
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+pagealignment{ALIGN}
+\family default 
+ Will reset the alignment of the 
+\emph on 
+thesis body only
+\emph default 
+.
+ 
+\family typewriter 
+ALIGN
+\family default 
+ is one of 
+\family typewriter 
+
+\backslash 
+raggedright
+\family default 
+,
+\family typewriter 
+ 
+\backslash 
+raggedleft
+\family default 
+, or 
+\family typewriter 
+
+\backslash 
+centering
+\family default 
+.
+ It is unlikely that you would use them; however, if either the graduate
+ school or your department balks at a properly formatted text body, just
+ use
+\begin_deeper 
+\layout LyX-Code
+
+
+\backslash 
+pagealignment{
+\backslash 
+raggedright}
+\layout Standard
+
+and the result will be the older, ugly, technically incorrect, typewriter-style
+ text alignment.
+\end_deeper 
+\layout Subsubsection
+
+Optional Page Alignment
+\layout Standard
+
+The default alignment for the optional pages is 
+\family typewriter 
+
+\backslash 
+raggedright
+\family default 
+.
+ Each of the four pages has a different suite of settings that can be controlled
+, allowing you to have, for instance, a justified preface and a centered
+ dedications page.
+ The commands are given below, and are the exact same for each page.
+ Replace 
+\family typewriter 
+XXX
+\family default 
+ with either 
+\family typewriter 
+ack
+\family default 
+, 
+\family typewriter 
+abs
+\family default 
+, 
+\family typewriter 
+cont
+\family default 
+, 
+\family typewriter 
+ded
+\family default 
+ or 
+\family typewriter 
+pref
+\family default 
+ to use the command on the abstract, acknowledgements, contributors dedications
+ or preface pages, respectively.
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+XXXpage[start|end]
+\family default 
+ Use this command and its arguments will be run immediately before and after
+ the text (not the title!) of the page.
+ Be careful with these commands because some commands will not end when
+ the page ends.
+ Thus, if you 
+\emph on 
+only
+\emph default 
+ use
+\begin_deeper 
+\layout LyX-Code
+
+
+\backslash 
+ackpagestart{
+\backslash 
+scshape}
+\layout Standard
+
+then all of the text from the Acknowlegements on--- throughout your entire
+ thesis--- will be in 
+\noun on 
+small caps
+\noun default 
+.
+ Why? Because you didn't end the command with something like 
+\layout LyX-Code
+
+
+\backslash 
+ackpageend{
+\backslash 
+upshape}
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+XXXpagestart
+\family default 
+ and 
+\family typewriter 
+
+\backslash 
+XXXpageend
+\family default 
+ are fairly robust, but you should still be careful using them.
+\end_deeper 
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+XXXpageclear
+\family default 
+ This command clears the settings for the page.
+ 
+\emph on 
+Using this command by itself will result in justified text.
+ 
+\emph default 
+By default, everypage has the same settings, which are
+\begin_deeper 
+\layout LyX-Code
+
+
+\backslash 
+XXXpagestart{
+\backslash 
+begin{flushleft}}
+\layout LyX-Code
+
+
+\backslash 
+XXXpageend{
+\backslash 
+end{flushleft}}
+\layout Standard
+
+Using 
+\family typewriter 
+
+\backslash 
+XXXpagestart
+\family default 
+ by itself will therefore give you an error (because the page will still
+ end with 
+\family typewriter 
+
+\backslash 
+end{flushleft}
+\family default 
+.
+ If you always remember to issue a 
+\family typewriter 
+
+\backslash 
+XXXpageclear
+\family default 
+ before changing any commands, and you'll be fine.
+ Optionally, you can use
+\layout LyX-Code
+
+
+\backslash 
+XXXpageend{}
+\layout Standard
+
+which serves to clear out the ending command as well.
+\end_deeper 
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+
+\backslash 
+XXXpagecenter
+\family default 
+ This command results in the page's text being centered.
+\layout Paragraph
+
+Page-Alignment Recap
+\layout Standard
+
+Here's a recap of the alignment options for the optional pages:
+\layout Small Itemize
+
+Use nothing and the page will be left-aligned.
+ This is the default.
+\layout Small Itemize
+
+Use 
+\family typewriter 
+
+\backslash 
+XXXpageclear
+\family default 
+ and the page will be justified.
+ 
+\layout Small Itemize
+
+Use 
+\family typewriter 
+
+\backslash 
+XXXpagecenter
+\family default 
+ and the page will be centered.
+\layout Small Itemize
+
+Use 
+\family typewriter 
+
+\backslash 
+XXXpagestart
+\family default 
+ and 
+\family typewriter 
+
+\backslash 
+XXXpageend
+\family default 
+ to do something crazy.
+\layout Standard
+
+As an example, for this documentation, I used the following commands
+\layout LyX-Code
+
+
+\backslash 
+ackpageclear
+\layout LyX-Code
+
+
+\backslash 
+abspageclear
+\layout LyX-Code
+
+
+\backslash 
+dedpagecenter
+\layout Section
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtexnospace
+\end_inset 
+
+ 's Idiosyncracies and Problems
+\layout Standard
+
+With any program, various choices have to be made by the programmer.
+ I've tried to limit these choices where I can.
+ Still, there are a few, and I'll add options for them if I know that people
+ want them changed.
+\layout Subsection
+
+Choices
+\layout Standard
+
+At some points, I've no doubt made choices without creating options so that
+ the user can use to modify them.
+ As people use this and complain about those choices, I will either create
+ an option or note them here.
+ Eventually, I may make another chapter which details the code so that people
+ can modify it.
+ 
+\layout Subsection
+
+Problems
+\layout Standard
+
+This is mainly a list of things I need to fix.
+ If there is nothing in the list, then there is nothing I know about.
+\layout Comment
+
+
+\begin_inset LatexCommand \BibTeX[jawra]{bibfile}
+
+\end_inset 
+
+
+\the_end

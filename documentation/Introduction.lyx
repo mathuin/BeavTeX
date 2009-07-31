@@ -1,0 +1,408 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass beavtexchapter
+\language english
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 1
+\use_numerical_citations 0
+\paperorientation portrait
+\leftmargin 30mm
+\topmargin 35mm
+\rightmargin 30mm
+\bottommargin 35mm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Introduction
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+ (the Beaver's LaTeX) is a LaTeX class designed specifically to format theses
+ and dissertations at Oregon State University.
+ It was created almost completely from the ground up as a fully functional
+ LaTeX class.
+ The original class was found to be inadequate, as it was mainly a complex
+ set of templates and files and borrowed classes from other universities
+ that was very hard to use.
+ Many intrepid explorers tried to fix it bit by bit and send it to others
+ in an improved form.
+ I decided to essentially scrap everything and start from scratch, borrowing
+ specific macros and definitions (mostly from the Table of Contents down,
+ in the source file).
+\layout Standard
+
+This chapter introduces 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+ and gives some hints on installation.
+ The following chapters detail 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtexnospace
+\end_inset 
+
+ 's commands/internals, and introduce using 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+ in LyX.
+ I hope you enjoy using 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+, and find that it helps you in writing your thesis.
+ Please send me any ideas you may have about improving it.
+\layout Standard
+\added_space_top bigskip \noindent 
+--John Metta
+\layout Standard
+\noindent 
+
+\family typewriter 
+<john.pennington@lifetime.oregonstate.edu>
+\layout Section
+
+LaTeX and LyX
+\layout Standard
+
+Some quick information first, for those who may not be aware.
+ LaTeX has a graphical front-end called LyX.
+ Depending on your field of study, learning LaTeX may be a good idea; however,
+ it's quite possible to get along with LyX without knowing a great deal
+ of LaTeX.
+\layout Subsection
+
+Getting and Learning LaTeX
+\layout Standard
+
+If you are reading this, you are either aware of, or curious about, the
+ beauty of using LaTeX to format documents.
+ For windows users who may have gotten a hold of this document and want
+ to try LaTeX, the distribution you should look for is called MiKTeX.
+ 
+\emph on 
+MiKTeX is Free.
+\layout Standard
+
+My suggestion, for those who are not total LaTeX gurus, is to get a copy
+ of the User's Guide by\SpecialChar ~
+
+\begin_inset LatexCommand \citet{lamport.94:LaTeX}
+
+\end_inset 
+
+.
+ It is a fast reference for nearly all of the commands you will need in
+ your day-to-day LaTeX life.
+ Another source, for those who want to learn TeX programming, is The 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+TeX{}
+\end_inset 
+
+book\SpecialChar ~
+
+\begin_inset LatexCommand \citep{knuth.84:TeXbook}
+
+\end_inset 
+
+.
+ It is the definitive guide to TeX as a programming language.
+\layout Subsection
+
+Using LaTeX Without Learning It
+\layout Standard
+
+Even if you know LaTeX, you may not be aware of LyX (
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+texttt{http://www.lyx.org}
+\end_inset 
+
+).
+ LyX is a graphical user interface to LaTeX.
+ If you are a Micro$oft user, think of it as a 
+\begin_inset Quotes eld
+\end_inset 
+
+Word for LaTeX
+\begin_inset Quotes erd
+\end_inset 
+
+.
+ It's available for Linux, Mac and Windows, and makes using LaTeX possible,
+ and even easy, without knowing anything about LaTeX programming.
+\layout Standard
+
+For those who are LaTeX hackers, it basically makes your life a lot easier,
+ because you can use it as a front end, but also have the ability to add
+ LaTeX code whereever/whenever you want.
+ LyX will not get in your way.
+\layout Standard
+
+LyX is essentially the only thing I use to write with, since everything
+ can be done in it.
+ It's a wonderful thing, but I'm probably biased.
+ In any case, if you are not using LyX, I suggest you look into it.
+\layout Section
+
+Installing 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+
+\layout Standard
+
+I've decided not to distribute 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+ in the standard CTAN manner, mainly because it will be provided specifically
+ to students at OSU, and all others would find it essentially useless but
+ for the possibility of using it to build another class.
+ 
+\layout Standard
+
+This source distribution includes 4 folders: 
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+archive
+\family default 
+ This folder is a collection of various versions and assorted files of the
+ original osuthesis class.
+ These are provided, in no particular organizational structure, mainly to
+ satisfy the curiosity of TeX/LaTeX hackers.
+ You can safely discard this folder.
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+documentation
+\family default 
+ Where the LaTeX version of the documentation, as well as the most recent
+ version of the Oregon State Graduate School style guide, resides.
+ Do with this what you wish.
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+latex
+\family default 
+ Contains the beavtex folder, copy this folder in its entirety (it contains
+ only beavtex.cls) to the appropriate place in your LaTeX distribution.
+ After you copy these files, you will have to run texhash as the superuser.
+ Windows users should consult their MiKTeX documentation to see about installing
+ classes.
+\layout List
+\labelwidthstring 00.00.0000
+
+
+\family typewriter 
+lyx
+\family default 
+ Contains the LyX layout definitions.
+ 
+\family typewriter 
+beavtexchapter.layout
+\family default 
+ is the layout used for individual chapters and sections.
+ 
+\family typewriter 
+beavtexmaster.layout
+\family default 
+ is the main file layout.
+ Copy these layout files to the layouts folder of your LyX program.
+ Run LyX, go to 
+\family sans 
+\bar under 
+E
+\bar default 
+dit\SpecialChar \menuseparator
+Reconfigure,
+\family default 
+ then restart LyX.
+\layout Standard
+
+That should do it.
+ With this little effort, you'll be on your way to spending time writing
+ your thesis, rather than formatting it.
+\layout Section
+
+Documentation as Example
+\layout Standard
+
+You can use 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtexnospace
+\end_inset 
+
+ 's documentation as an example of how to build a thesis.
+ One way is to look into the LaTeX file 
+\family typewriter 
+beavtex.tex
+\family default 
+.
+ This is the main file for the documentation, and includes the other files
+ so that you can see how to include individual chapters as seperate files.
+ The other way is to use LyX and open the file 
+\family typewriter 
+beavtex.lyx
+\family default 
+.
+ The thesis was actually written using LyX, and exported into LaTeX and
+ PDF formats from there.
+\layout Subsection
+
+Typesetting the Name
+\layout Standard
+
+You can typeset the name 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+ within your document by using the LaTeX command 
+\family typewriter 
+
+\backslash 
+beavtex
+\family default 
+.
+ This will automatically insert a trailing space, so if you want to say
+ something like 
+\begin_inset Quotes eld
+\end_inset 
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtexnospace
+\end_inset 
+
+ 's cool layout options rule,
+\begin_inset Quotes erd
+\end_inset 
+
+ use the nospace version as so
+\layout LyX-Code
+
+
+\backslash 
+beavtexnospace 's cool layout options rule
+\layout Standard
+
+Honestly, this is only available for purely egotistical reasons.
+ I mean, there's absolutely no reason that you would 
+\emph on 
+need
+\emph default 
+ this functionality, unless you were going to use it to acknowledge 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+beavtex
+\end_inset 
+
+ as\SpecialChar \ldots{}
+say\SpecialChar \ldots{}
+the single most important thing you've used to complete your thesis.
+\layout Comment
+
+
+\begin_inset LatexCommand \BibTeX[jawra]{bibfile}
+
+\end_inset 
+
+
+\the_end

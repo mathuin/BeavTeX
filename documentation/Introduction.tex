@@ -1,0 +1,134 @@
+
+\chapter{Introduction}
+
+\beavtex (the Beaver's \LaTeX{}) is a \LaTeX{} class designed specifically
+to format theses and dissertations at Oregon State University. It
+was created almost completely from the ground up as a fully functional
+\LaTeX{} class. The original class was found to be inadequate, as
+it was mainly a complex set of templates and files and borrowed classes
+from other universities that was very hard to use. Many intrepid explorers
+tried to fix it bit by bit and send it to others in an improved form.
+I decided to essentially scrap everything and start from scratch,
+borrowing specific macros and definitions (mostly from the Table of
+Contents down, in the source file).
+
+This chapter introduces \beavtex and gives some hints on installation.
+The following chapters detail \beavtexnospace 's commands/internals,
+and introduce using \beavtex in \LyX{}. I hope you enjoy using \beavtex,
+and find that it helps you in writing your thesis. Please send me
+any ideas you may have about improving it.
+
+\bigskip{}
+\noindent --John Metta
+
+\noindent \texttt{<john.pennington@lifetime.oregonstate.edu>}
+
+
+\section{\LaTeX{} and \LyX{}}
+
+Some quick information first, for those who may not be aware. \LaTeX{}
+has a graphical front-end called \LyX{}. Depending on your field of
+study, learning \LaTeX{} may be a good idea; however, it's quite possible
+to get along with \LyX{} without knowing a great deal of \LaTeX{}.
+
+
+\subsection{Getting and Learning \LaTeX{}}
+
+If you are reading this, you are either aware of, or curious about,
+the beauty of using \LaTeX{} to format documents. For windows users
+who may have gotten a hold of this document and want to try \LaTeX{},
+the distribution you should look for is called MiK\TeX{}. \emph{MiK\TeX{}
+is Free.}
+
+My suggestion, for those who are not total \LaTeX{} gurus, is to get
+a copy of the User's Guide by~\citet{lamport.94:LaTeX}. It is a
+fast reference for nearly all of the commands you will need in your
+day-to-day \LaTeX{} life. Another source, for those who want to learn
+\TeX{} programming, is The \TeX{}book~\citep{knuth.84:TeXbook}.
+It is the definitive guide to \TeX{} as a programming language.
+
+
+\subsection{Using \LaTeX{} Without Learning It}
+
+Even if you know \LaTeX{}, you may not be aware of \LyX{} (\texttt{http://www.lyx.org}).
+\LyX{} is a graphical user interface to \LaTeX{}. If you are a Micro\$oft
+user, think of it as a {}``Word for \LaTeX{}''. It's available for
+Linux, Mac and Windows, and makes using \LaTeX{} possible, and even
+easy, without knowing anything about \LaTeX{} programming.
+
+For those who are \LaTeX{} hackers, it basically makes your life a
+lot easier, because you can use it as a front end, but also have the
+ability to add \LaTeX{} code whereever/whenever you want. \LyX{} will
+not get in your way.
+
+\LyX{} is essentially the only thing I use to write with, since everything
+can be done in it. It's a wonderful thing, but I'm probably biased.
+In any case, if you are not using \LyX{}, I suggest you look into
+it.
+
+
+\section{Installing \beavtex}
+
+I've decided not to distribute \beavtex in the standard CTAN manner,
+mainly because it will be provided specifically to students at OSU,
+and all others would find it essentially useless but for the possibility
+of using it to build another class. 
+
+This source distribution includes 4 folders: 
+
+\begin{lyxlist}{00.00.0000}
+\item [\texttt{archive}]This folder is a collection of various versions
+and assorted files of the original osuthesis class. These are provided,
+in no particular organizational structure, mainly to satisfy the curiosity
+of \TeX{}/\LaTeX{} hackers. You can safely discard this folder.
+\item [\texttt{documentation}]Where the \LaTeX{} version of the documentation,
+as well as the most recent version of the Oregon State Graduate School
+style guide, resides. Do with this what you wish.
+\item [\texttt{latex}]Contains the beavtex folder, copy this folder in
+its entirety (it contains only beavtex.cls) to the appropriate place
+in your \LaTeX{} distribution. After you copy these files, you will
+have to run texhash as the superuser. Windows users should consult
+their MiK\TeX{} documentation to see about installing classes.
+\item [\texttt{lyx}]Contains the \LyX{} layout definitions. \texttt{beavtexchapter.layout}
+is the layout used for individual chapters and sections. \texttt{beavtexmaster.layout}
+is the main file layout. Copy these layout files to the layouts folder
+of your \LyX{} program. Run \LyX{}, go to \textsf{\underbar{E}}\textsf{dit\lyxarrow{}Reconfigure,}
+then restart \LyX{}.
+\end{lyxlist}
+That should do it. With this little effort, you'll be on your way
+to spending time writing your thesis, rather than formatting it.
+
+
+\section{Documentation as Example}
+
+You can use \beavtexnospace 's documentation as an example of how
+to build a thesis. One way is to look into the \LaTeX{} file \texttt{beavtex.tex}.
+This is the main file for the documentation, and includes the other
+files so that you can see how to include individual chapters as seperate
+files. The other way is to use \LyX{} and open the file \texttt{beavtex.lyx}.
+The thesis was actually written using \LyX{}, and exported into \LaTeX{}
+and PDF formats from there.
+
+
+\subsection{Typesetting the Name}
+
+You can typeset the name \beavtex within your document by using the
+\LaTeX{} command \texttt{\textbackslash{}beavtex}. This will automatically
+insert a trailing space, so if you want to say something like {}``\beavtexnospace
+'s cool layout options rule,'' use the nospace version as so
+
+\begin{lyxcode}
+\textbackslash{}beavtexnospace~'s~cool~layout~options~rule
+\end{lyxcode}
+Honestly, this is only available for purely egotistical reasons. I
+mean, there's absolutely no reason that you would \emph{need} this
+functionality, unless you were going to use it to acknowledge \beavtex
+as\ldots{}say\ldots{}the single most important thing you've used
+to complete your thesis.
+
+\begin{comment}
+\bibliographystyle{jawra}
+\bibliography{bibfile}
+
+\end{comment}
+

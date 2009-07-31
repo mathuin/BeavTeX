@@ -1,0 +1,25 @@
+\select@language {american}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}\textlatin {\LaTeX }{} and L\kern -.1667em\lower .25em\hbox {Y}\kern -.125emX\spacefactor \@m {}}{1}
+\contentsline {subsection}{\numberline {1.1.1}Getting and Learning \textlatin {\LaTeX }{}}{1}
+\contentsline {subsection}{\numberline {1.1.2}Using \textlatin {\LaTeX }{} Without Learning It}{2}
+\contentsline {section}{\numberline {1.2}Installing $\rm {B^{\kern -.1em\textsc {e}}\ \kern -.6em_{\textsc {a}}\kern -.4em\textsc {v}}$\kern -.3em\textlatin {T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m }\ }{2}
+\contentsline {section}{\numberline {1.3}Documentation as Example}{3}
+\contentsline {subsection}{\numberline {1.3.1}Typesetting the Name}{3}
+\contentsline {chapter}{\numberline {2}Using $\rm {B^{\kern -.1em\textsc {e}}\ \kern -.6em_{\textsc {a}}\kern -.4em\textsc {v}}$\kern -.3em\textlatin {T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m }\ }{5}
+\contentsline {section}{\numberline {2.1}Loading the class}{5}
+\contentsline {section}{\numberline {2.2}Basic Commands}{6}
+\contentsline {subsection}{\numberline {2.2.1}Mandatory Commands}{6}
+\contentsline {subsubsection}{\numberline {2.2.1.1}Default Commands}{7}
+\contentsline {subsection}{\numberline {2.2.2}Optional Commands}{8}
+\contentsline {subsubsection}{\numberline {2.2.2.1}Optional pages}{8}
+\contentsline {section}{\numberline {2.3}Advanced Options}{9}
+\contentsline {subsection}{\numberline {2.3.1}Line Spacing Options}{12}
+\contentsline {subsection}{\numberline {2.3.2}Controlling Page Alignment}{13}
+\contentsline {subsubsection}{\numberline {2.3.2.1}Body Alignment}{13}
+\contentsline {subsubsection}{\numberline {2.3.2.2}Optional Page Alignment}{13}
+\contentsline {paragraph}{Page-Alignment Recap}{14}
+\contentsline {section}{\numberline {2.4}$\rm {B^{\kern -.1em\textsc {e}}\ \kern -.6em_{\textsc {a}}\kern -.4em\textsc {v}}$\kern -.3em\textlatin {T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m }'s Idiosyncracies and Problems}{15}
+\contentsline {subsection}{\numberline {2.4.1}Choices}{15}
+\contentsline {subsection}{\numberline {2.4.2}Problems}{15}
+\contentsline {chapter}{\numberline {3}Using The L\kern -.1667em\lower .25em\hbox {Y}\kern -.125emX\spacefactor \@m {} Layouts}{16}

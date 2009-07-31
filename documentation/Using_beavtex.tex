@@ -1,0 +1,501 @@
+\headingpage{Using \beavtex }{John W. Metta, Leslie A. Aamport and Donald K. Nuth}{Journal of \LaTeX{}\ Fun}{Oregon State University\\Corvallis, Oregon}{Vol. 4, Num 5, pp. 234-345}
+
+
+\chapter{Using \beavtex}
+
+The first thing you should notice about \beavtex is this documentation.
+It is formatted in the manner of a dual masters thesis. Even the previous
+page is a cover page for those who choose manuscript style and have
+published a chapter before presenting their thesis. Most (it should
+be all, but I may have missed some) formatting requirements of the
+Oregon State thesis guide have been taken care of, and the design
+of this documentation is such that many optional requirements are
+used so that you have an example.
+
+
+\section{Loading the class}
+
+The basic options of \beavtex are similiar to those in any class,
+and \beavtex itself is based on the book class. Thus, you can load
+the class with
+
+\begin{lyxcode}
+\textbackslash{}documentclass{[}opts{]}\{beavtex\}
+\end{lyxcode}
+and any options that you pass as \texttt{opts} and that \beavtex
+does not recognize, will go straight on to the book class. Thus, if
+you want to format your thesis to print on both sides of the page,
+you would load the class as
+
+\begin{lyxcode}
+\textbackslash{}documentclass{[}twoside{]}\{beavtex\}
+\end{lyxcode}
+Since \beavtex does not recognize the \texttt{twoside} option, it
+will pass to the underlying book class. 
+
+\begin{lyxlist}{00.00.0000}
+\item [Margins]The graduate school requires margins that are 1.5 inch left
+and 1 inch elsewhere \emph{at a minimum}. They recommend 1.7 inch
+left. \beavtex natively sets a 1.7 inch left margin, which you can
+change to 1.5 inch by using the option \texttt{\noun{1.5}}. Regardless
+of your choice of inner margin, \beavtex will set your outer margins
+at 1.1 inch, to assure that your document conforms to the graduate
+school requirements.
+\item [Font~Size]You may use the options \texttt{12pt}, \noun{}\texttt{11pt},
+\noun{}and \noun{}\texttt{10pt} to set the base font size. The
+default is a 12 point font. 
+\end{lyxlist}
+As an example, to print on both sides with a 1.5 inch inner margin
+and an 11 point font, use:
+
+\begin{lyxcode}
+\textbackslash{}documentclass{[}twoside,1.5,11pt{]}\{beavtex\}
+\end{lyxcode}
+and the class will load, passing the \texttt{twoside} option to the
+book class.
+
+
+\section{Basic Commands}
+
+Since \beavtex was designed to take care of all the pretext page
+formatting automagically, you should only need to give it the basic
+information. All of the following commands should be written as:
+
+\begin{lyxcode}
+\textbackslash{}command\{This~is~what~you~want~printed\}
+\end{lyxcode}
+Most commands have a \LyX{} counterpart in the master layout file
+(the chapter layout file holds no \beavtex commands) and are noted
+below.
+
+\emph{Commands with no \LyX{} counterpart can still be used in \LyX{}
+easily by using} \textsf{\emph{Layout\lyxarrow{}Document}} \emph{and
+adding them to the preamble.}
+
+
+\subsection{Mandatory Commands}
+
+All mandatory commands have \LyX{} counterparts.
+
+\begin{lyxlist}{00.00.0000}
+\item [\texttt{\textbackslash{}title}]This is the title of your thesis.
+If your title is very long, you will be interested in the optional
+command \texttt{\textbackslash{}twotitle}, given below. 
+\item [\texttt{\textbackslash{}author}]In short, you. Do not use the \LaTeX{}
+\texttt{\textbf{\noun{\textbackslash{}and}}} command. Ideally, your
+thesis should be one author only. If you must use more than one author,
+you can simply type something like:
+
+\begin{lyxcode}
+\textbackslash{}author\{U.R.~Wise~and~I.M.~Dumb\}
+\end{lyxcode}
+\item [\texttt{\textbackslash{}major}]The official name of your major,
+such as Geography, or Bioresource Engineering. Two majors are allowed
+(See Sections~\ref{sub:Optional-Commands} and~\ref{sec:Advanced-Options}).
+\item [\texttt{\textbackslash{}department}]The name of your department,
+such as Geosciences or Bioengineering. Two departments are allowed
+(See Sections~\ref{sub:Optional-Commands} and~\ref{sec:Advanced-Options}).
+\item [\texttt{\textbackslash{}advisor}]The full name (including middle
+initial) of your advisor. Two co-advisors are allowed (See Sections~\ref{sub:Optional-Commands}
+and~\ref{sec:Advanced-Options}).
+\item [\texttt{\textbackslash{}degree}]This will be something like {}``Masters
+of Science'' or {}``Doctor of Philosophy''.
+\item [\texttt{\textbackslash{}doctype}]The document type is probably either
+{}``Thesis'' or {}``Dissertation,'' though you may define your
+own, such as {}``Project'' or {}``Presentation''. \emph{(\LyX{}:
+Document Type)}.
+\end{lyxlist}
+
+\subsubsection{Default Commands}
+
+These commands are either optional, or are mandatory but have default
+values built in. Not all have \LyX{} counterparts.
+
+\begin{lyxlist}{00.00.0000}
+\item [\texttt{\textbackslash{}abstract}]This should be the \emph{text}
+of the abstract only--- the formal stuff is preformatted. The abstract
+is formatted on the first page of the thesis. If for some reason,
+you do not need an abstract, the abstract will still be formatted,
+but you needn't print the first page. This page does not get numbered,
+so will not affect numbering of subsequent pages if you discard it.
+\emph{(\LyX{})}
+\item [\texttt{\textbackslash{}submitdate}]The submission date of your
+thesis. This value defaults to \texttt{\textbackslash{}today} if it
+is not present, but you can enter whatever day you wish. This is the
+date printed on the abstract and signature pages. \emph{(\LyX{}: Submission
+Date)}
+\item [\texttt{\textbackslash{}copyrightyear}]This is the year of your
+document's copyright. It defaults to the current year (\texttt{\textbackslash{}the\textbackslash{}year}),
+but can be changed. \emph{(\LyX{})}
+\item [\texttt{\textbackslash{}commencementyear}]The year of your commencement.
+Default is the current year. \emph{(\LyX{})}
+\item [\texttt{\textbackslash{}depthead}]This is the title of the head
+of your department, school, whatever. It defaults to {}``Chair,''
+but you can use {}``Head,'' {}``Dean'' or whatever you want. \emph{(No
+\LyX{})}
+\item [\texttt{\textbackslash{}depttype}]This is the type of the department.
+It defaults to {}``Department,'' but {}``School,'' {}``College,''
+etc. are sometimes necessary. \emph{(No \LyX{})}
+\end{lyxlist}
+
+\subsection{Optional Commands\label{sub:Optional-Commands}}
+
+Some optional reqirements, including some for those who are dual majors.
+Many of these options were used to format this documentation, so that
+you can see how they look.
+
+\begin{lyxlist}{00.00.0000}
+\item [\texttt{\textbackslash{}twotitle}]If your title is long, it will
+overrun the margin on the abstract page. This is a serious \TeX{}
+problem, that is even mentioned in the \TeX{}book as being difficult
+at best to solve~\citep{knuth.84:TeXbook}. For this reason, you
+should format your title completely with the \texttt{\noun{\textbackslash{}}}\texttt{title}
+command, then view the dvi or pdf file to see where your title should
+have a line break. You can then put the portion of your title after
+the point of a necessary linebreak into this command, and it will
+look fine. This does not affect the titlepage or anything else, so
+if you are not formatting an abstract, you needn't worry about using
+\texttt{\textbackslash{}twotitle}. (\emph{\LyX{}: Second Title)}
+\item [\texttt{\textbackslash{}coadvisor}]Your co-advisor, or your second
+advisor if you are a dual/double major. (\emph{\LyX{})}
+\item [\texttt{\textbackslash{}twomajor}]This is your second major if you
+are a dual/double major. (\emph{\LyX{}: Second Major)}
+\item [\texttt{\textbackslash{}twodepartment}]Likewise for your department.
+(\emph{\LyX{}: Second Department)}
+\item [\texttt{\textbackslash{}twodepthead}]The title of the head of your
+second department. (\emph{No \LyX{})}
+\item [\texttt{\textbackslash{}twodepttype}]The type of your second department.
+(\emph{No \LyX{})}
+\end{lyxlist}
+
+\subsubsection{Optional pages}
+
+The following pages only print if you use the commands.
+
+\begin{lyxlist}{00.00.0000}
+\item [\texttt{\textbackslash{}acknowledgements}]These are your acknowledgements
+usually in paragraph form, but formatted however you like. (\emph{\LyX{})}
+\item [\texttt{\textbackslash{}preface}]Your preface. (\emph{\LyX{})}
+\item [\texttt{\textbackslash{}dedication}]Your dedications page. (\emph{\LyX{})}
+\item [\texttt{\textbackslash{}contributors}]For manuscript format, these
+are the contributions of other workers/authors. (\emph{\LyX{})}
+\end{lyxlist}
+
+\section{Advanced Options\label{sec:Advanced-Options}}
+
+There are many small things that can be different from project to
+project, and thus much that is unique to each thesis/dissertation.
+I've tried to capture all that I found here. Those that are not here,
+you may have to add yourself or contact me and I can probably add
+them. \emph{None of these commands have \LyX{} counterparts, all of
+them must go into the preamble.}
+
+\begin{lyxlist}{00.00.0000}
+\item [\texttt{\textbackslash{}chapword}]This is the name (not the title)
+of all chapters. It defaults to blank, which will just print a chapter
+number. For an example, this document uses the command
+
+\begin{lyxcode}
+\textbackslash{}chapword\{\textbackslash{}beavtex~Chapter\}
+\end{lyxcode}
+so that you can see what it looks like to change the word.
+
+\item [\texttt{\textbackslash{}chapheadsep}]This is a field which separates
+the chapter number and the chapter title. It defaults to a space and
+a double hyphen as in {}``Chapter 1 -- Some Title,'' but you can
+choose to make this a single period with
+
+\begin{lyxcode}
+\textbackslash{}chapheadsep\{.\}
+\end{lyxcode}
+which would read {}``Chapter 1. Some Title.'' unless \texttt{\textbackslash{}chapword}
+is not defined, in which case it would read {}``1. Some Title.''
+
+\item [\texttt{\textbackslash{}nopretext}]Often, during the writing of
+your thesis, you may want to check out how the formatting looks or
+proof-read it as a document. For this, it may be cumbersome to print
+all of the pretext pages only to ignore them and have to scroll past
+them to get to your thesis. using the option
+
+\begin{lyxcode}
+\textbackslash{}nopretext\{\}
+\end{lyxcode}
+will force \LaTeX{} to ignore all of the pages that come before your
+table of contents.
+
+\item [\texttt{\textbackslash{}depthoftoc}]This controls how many levels
+of sections and subsections are listed in the Table of Contents. The
+number defines levels \emph{below} the chapter level. It defaults
+to 2, meaning that sections and subsections will be listed in the
+TOC. If you want, for instance, subsubsection and paragraph headings,
+you would use
+
+\begin{lyxcode}
+\textbackslash{}depthoftoc\{4\}
+\end{lyxcode}
+which may be quite busy and awkward, but it's your thesis, not mine.
+This also comes in handy in context with the \texttt{\textbackslash{}nopretext\{\}}
+option, since you can set the depth to zero and only print chapter
+names, ensuring that you don't need to scroll through a long TOC to
+read your text. You can also comment out the \texttt{\textbackslash{}tableofcontents}
+command to avoid printing it at all.
+
+\item [\texttt{\textbackslash{}smallitem}]An itemize environment that is
+used exactly like the \LaTeX{} \texttt{\textbackslash{}itemize}, but
+which has smaller spaces between the text.
+
+\begin{itemize}
+\item This is a list with the normal \texttt{\textbackslash{}itemize} environment.
+\item It has rather large spacing between the items.
+\end{itemize}
+versus the \texttt{\textbackslash{}smallitem} environment
+
+\begin{smallitem}
+\item The \texttt{\textbackslash{}smallitem} environment
+\item has smaller spaces between each item.
+\end{smallitem}
+\item [\texttt{\textbackslash{}smallenum}]This is an enumerate environtment
+that is used exactly like the \LaTeX{} \texttt{\textbackslash{}enumerate},
+but which has spacing like \texttt{\textbackslash{}smallitem}.
+
+\begin{smallenum}
+\item Like the \texttt{\textbackslash{}smallitem} environtment,
+\item the \texttt{\textbackslash{}smallenum} environment
+\item is similiarly spaced.
+\end{smallenum}
+\item [\texttt{\textbackslash{}headingpage}]For those using the manuscript
+layout, there is the possibility that you have published a chapter
+of your thesis prior to submitting it to the graduate school. These
+chapters require a cover page (as in the beginning of this chapter)
+stating the title of paper (this must match the chapter title exactly!),
+the authors, and the journal information. This page can be automagically
+formatted with a single command:
+
+\begin{lyxcode}
+\textbackslash{}headingpage\{Title\}\{Authors\}\{Journal~Title\}\{Journal~address\}~\\
+\{Issue~Information\}
+\end{lyxcode}
+where any of the fields can include a newline in the form of a \LaTeX{}
+double slash (\texttt{\textbackslash{}\textbackslash{}}). This command
+must come before the chapter title in the document. For \LyX{} users:
+Use the \TeX{} entry method, which is the standard method that \TeX{}/\LaTeX{}
+commands are entered. Again, do not use \texttt{\textbackslash{}and}
+in the author list. 
+
+\item [\texttt{\textbackslash{}bigfloatskip}]This is an option for setting
+a wider separation for floats. It defaults to false, but you may use
+
+\begin{lyxcode}
+\textbackslash{}bigfloatskip\{true\}
+\end{lyxcode}
+to have 42pt, vs. 20pt spacing.
+
+\item [\texttt{\textbackslash{}begin\{figure\}}]Figures are placed in your
+document with
+
+\begin{lyxcode}
+\textbackslash{}begin\{figure\}\textbackslash{}end\{figure\}~
+\end{lyxcode}
+This will also allow for a separate list of figures to be included
+in your Table of Context. If you have enough figures that you require
+them to be in an appendix, use
+
+\begin{lyxcode}
+\textbackslash{}begin\{afigure\}\textbackslash{}end\{afigure\}
+\end{lyxcode}
+\item [\texttt{\textbackslash{}listoffigures}]This works exactly as it
+should. It puts a List of Figures, formatted just as the Table of
+Contents. To use it, place
+
+\begin{lyxcode}
+\textbackslash{}listoffigures\textbackslash{}clearpage
+\end{lyxcode}
+immediately after the TOC. You can also use
+
+\begin{lyxcode}
+\textbackslash{}listofappendixfigures\textbackslash{}clearpage
+\end{lyxcode}
+to format a list of figures that have been inserted with \texttt{\textbackslash{}begin\{afigure\}}.
+
+\item [\texttt{\textbackslash{}begin\{table\}}]This works the same as \texttt{\textbackslash{}begin\{figure\}}
+above. Use \texttt{\textbackslash{}begin\{atable\}} for appendix tables.
+\item [\texttt{\textbackslash{}listoftables}]This works the same as \texttt{\textbackslash{}listoffigures}
+above. Use \texttt{\textbackslash{}listofappendixtables} to list appendix
+tables.
+\end{lyxlist}
+
+\subsection{Line Spacing Options}
+
+\beavtex uses the default \LaTeX{} linespacing. The commands are
+\texttt{\textbackslash{}singlespacing} (this is the default), \texttt{\textbackslash{}onehalfspacing}
+and \texttt{\textbackslash{}doublespacing}. In order to set your thesis
+in doublespace type, issue the \texttt{\textbackslash{}doublespacing}
+command in the preamble.
+
+When you reset the spacing, two important things will be reset. Your
+Table of Contents and your Bibliography (and index, etc. if you include
+them). If you want these single spaced, put them in a \texttt{singlespacing}
+environment as so
+
+\begin{lyxcode}
+\textbackslash{}begin\{singlespacing\}\textbackslash{}tableofcontents\{\}\textbackslash{}end\{singlespacing\}
+\end{lyxcode}
+Likewise, for your bibliography, you would use something like
+
+\begin{lyxcode}
+\textbackslash{}begin\{singlespacing\}
+
+\textbackslash{}bibliographystyle\{jawra\}
+
+\textbackslash{}clearpage\textbackslash{}addcontentsline\{toc\}\{chapter\}\{Bibliography\}
+
+\textbackslash{}bibliography\{bibfile\}
+
+\textbackslash{}end\{singlespacing\}
+\end{lyxcode}
+Keep in mind, that you can singlespace virtually anything you want
+this way, by starting with \texttt{\textbackslash{}begin\{singlespacing\}}
+and ending with \texttt{\textbackslash{}end\{singlespacing\}}. For
+instance:
+
+\begin{singlespacing}
+
+\begin{smallitem}
+\item This is a list of items
+\item with the smallitem environment.
+\item and I want to make them print with single spacing
+\end{smallitem}
+\end{singlespacing}
+
+
+\subsection{Controlling Page Alignment}
+
+The optional pages (abstract, acknowlegements, contributors, dedication
+and preface) as well as the body of the text can be aligned as you
+see fit. The default is a justified body and left-aligned optional
+pages, but some users may wish to change these settings. \emph{All
+page alignment settings go into the preamble.}
+
+
+\subsubsection{Body Alignment}
+
+\begin{lyxlist}{00.00.0000}
+\item [\texttt{\textbackslash{}pagealignment\{ALIGN\}}]Will reset the alignment
+of the \emph{thesis body only}. \texttt{ALIGN} is one of \texttt{\textbackslash{}raggedright},
+\texttt{\textbackslash{}raggedleft}, or \texttt{\textbackslash{}centering}.
+It is unlikely that you would use them; however, if either the graduate
+school or your department balks at a properly formatted text body,
+just use
+
+\begin{lyxcode}
+\textbackslash{}pagealignment\{\textbackslash{}raggedright\}
+\end{lyxcode}
+and the result will be the older, ugly, technically incorrect, typewriter-style
+text alignment.
+
+\end{lyxlist}
+
+\subsubsection{Optional Page Alignment}
+
+The default alignment for the optional pages is \texttt{\textbackslash{}raggedright}.
+Each of the four pages has a different suite of settings that can
+be controlled, allowing you to have, for instance, a justified preface
+and a centered dedications page. The commands are given below, and
+are the exact same for each page. Replace \texttt{XXX} with either
+\texttt{ack}, \texttt{abs}, \texttt{cont}, \texttt{ded} or \texttt{pref}
+to use the command on the abstract, acknowledgements, contributors
+dedications or preface pages, respectively.
+
+\begin{lyxlist}{00.00.0000}
+\item [\texttt{\textbackslash{}XXXpage{[}start|end{]}}]Use this command
+and its arguments will be run immediately before and after the text
+(not the title!) of the page. Be careful with these commands because
+some commands will not end when the page ends. Thus, if you \emph{only}
+use
+
+\begin{lyxcode}
+\textbackslash{}ackpagestart\{\textbackslash{}scshape\}
+\end{lyxcode}
+then all of the text from the Acknowlegements on--- throughout your
+entire thesis--- will be in \noun{small caps}. Why? Because you
+didn't end the command with something like 
+
+\begin{lyxcode}
+\textbackslash{}ackpageend\{\textbackslash{}upshape\}
+\end{lyxcode}
+\texttt{\textbackslash{}XXXpagestart} and \texttt{\textbackslash{}XXXpageend}
+are fairly robust, but you should still be careful using them.
+
+\item [\texttt{\textbackslash{}XXXpageclear}]This command clears the settings
+for the page. \emph{Using this command by itself will result in justified
+text.} By default, everypage has the same settings, which are
+
+\begin{lyxcode}
+\textbackslash{}XXXpagestart\{\textbackslash{}begin\{flushleft\}\}
+
+\textbackslash{}XXXpageend\{\textbackslash{}end\{flushleft\}\}
+\end{lyxcode}
+Using \texttt{\textbackslash{}XXXpagestart} by itself will therefore
+give you an error (because the page will still end with \texttt{\textbackslash{}end\{flushleft\}}.
+If you always remember to issue a \texttt{\textbackslash{}XXXpageclear}
+before changing any commands, and you'll be fine. Optionally, you
+can use
+
+\begin{lyxcode}
+\textbackslash{}XXXpageend\{\}
+\end{lyxcode}
+which serves to clear out the ending command as well.
+
+\item [\texttt{\textbackslash{}XXXpagecenter}]This command results in the
+page's text being centered.
+\end{lyxlist}
+
+\paragraph{Page-Alignment Recap}
+
+Here's a recap of the alignment options for the optional pages:
+
+\begin{smallitem}
+\item Use nothing and the page will be left-aligned. This is the default.
+\item Use \texttt{\textbackslash{}XXXpageclear} and the page will be justified. 
+\item Use \texttt{\textbackslash{}XXXpagecenter} and the page will be centered.
+\item Use \texttt{\textbackslash{}XXXpagestart} and \texttt{\textbackslash{}XXXpageend}
+to do something crazy.
+\end{smallitem}
+As an example, for this documentation, I used the following commands
+
+\begin{lyxcode}
+\textbackslash{}ackpageclear
+
+\textbackslash{}abspageclear
+
+\textbackslash{}dedpagecenter
+\end{lyxcode}
+
+\section{\beavtexnospace 's Idiosyncracies and Problems}
+
+With any program, various choices have to be made by the programmer.
+I've tried to limit these choices where I can. Still, there are a
+few, and I'll add options for them if I know that people want them
+changed.
+
+
+\subsection{Choices}
+
+At some points, I've no doubt made choices without creating options
+so that the user can use to modify them. As people use this and complain
+about those choices, I will either create an option or note them here.
+Eventually, I may make another chapter which details the code so that
+people can modify it. 
+
+
+\subsection{Problems}
+
+This is mainly a list of things I need to fix. If there is nothing
+in the list, then there is nothing I know about.
+
+\begin{comment}
+\bibliographystyle{jawra}
+\bibliography{bibfile}
+
+\end{comment}
+

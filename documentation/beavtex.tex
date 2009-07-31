@@ -1,0 +1,137 @@
+%% LyX 1.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english,american,11pt]{beavtex}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{amssymb}
+\usepackage[authoryear]{natbib}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\providecommand{\LyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+\newcommand{\noun}[1]{\textsc{#1}}
+\newcommand{\lyxarrow}{\leavevmode\,$\triangleright$\,\allowbreak}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ \newenvironment{lyxlist}[1]
+   {\begin{list}{}
+     {\settowidth{\labelwidth}{#1}
+      \setlength{\leftmargin}{\labelwidth}
+      \addtolength{\leftmargin}{\labelsep}
+      \renewcommand{\makelabel}[1]{##1\hfil}}}
+   {\end{list}}
+ \newenvironment{lyxcode}
+   {\begin{list}{}{
+     \setlength{\rightmargin}{\leftmargin}
+     \setlength{\listparindent}{0pt}% needed for AMS classes
+     \raggedright
+     \setlength{\itemsep}{0pt}
+     \setlength{\parsep}{0pt}
+     \normalfont\ttfamily}%
+    \item[]}
+   {\end{list}}
+ \usepackage{verbatim}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\depthead{Head}
+\depttype{College}
+\dedpagecenter
+\ackpageclear
+\abspageclear
+\depthoftoc{3}
+\chapword{\beavtex Chapter}
+
+\usepackage{babel}
+\makeatother
+\begin{document}
+
+\title{\beavtex: Overview and Documentation of the Oregon State University
+\LaTeX{}}
+
+
+\twotitle{Class and \LyX{} Layouts}
+
+
+\author{John W. Metta}
+
+
+\degree{Masters of Science}
+
+
+\doctype{Thesis}
+
+
+\major{\LaTeX{} Hackineering}
+
+
+\twomajor{\LyX{} Documentation}
+
+
+\department{\TeX{}/\LaTeX{} Engineering}
+
+
+\twodepartment{\LyX{}--ology}
+
+
+\advisor{Donald K. Nuth}
+
+
+\coadvisor{Leslie A. Aamport}
+
+
+\abstract{\beavtex is a replacement for the old osuthesis class. It is both
+a \LaTeX{} class and set of \LyX{} layout files that allow the user
+to quickly and painlessly format a thesis according to the requirements
+of the Oregon State University Graduate School. Most, if not all,
+formatting requirements are automagically prepared. It was created
+from the ground up, with some input from a historical set of files
+and macros, both from OSU and external sources. This fake thesis serves
+both as an example and as documentation. It contains full documentation
+on all of \beavtexnospace 's options, as well as on the \LyX{} layout
+files.}
+
+
+\acknowledgements{This page is mostly here to demonstrate one of the pretext pages.
+However, there \emph{are} a lot of people who deserve some credit
+for making the earlier incarnations of the osuthesis class possible.
+Unfortunately, I don't even know who they all are. I've gathered what
+names I could that were sprinkled around various source files to the
+original osuthesis class. One of the template files that I found acknowledges
+Dr. Gregg Rothermel of the Oregon State University Software Engineering
+Group, but states that {}``most of the credit for the real work in
+creating {[}one of the original versions{]}, however, belongs to Lixin
+Li and Chengyun Chu.'' That file also states that it was modified
+by Alexey G. Malishevsky. I got these templates from Eric Altendorf,
+who in turn got them from Rogan Creswick, whence he got them, I don't
+know. Both Eric and Rogan apparently did a lot of work on what were
+a large number of templates and macros. Both of those intrepid explorers
+weeded through code a great deal to leave something better and easier
+for the next users. Some of the macros from those original templates
+are included here and have helped build this class--- especially the
+table of contents formatting, which is the main section culled from
+those original templates. Some credit should also also go to Norman
+Gall of University of Calgary, who wrote a .cls file for Rayees Shamsuddin,
+who in turn sent it to me. I didn't actually use any of Norman's code
+(at least, I don't think I did), but the fact that he went through
+the trouble to create a \LaTeX{} class for others to use is deserving
+of credit.}
+
+
+\dedication{To Donald Knuth and Leslie Lamport.\\
+Without them, \TeX{} and \LaTeX{} would never have been possible.}
+
+\maketitle
+\tableofcontents{}
+
+\include{Introduction}
+
+\include{Using_beavtex}
+
+\include{Using_lyx}\bibliographystyle{jawra}
+\bibliography{bibfile}
+
+\end{document}
