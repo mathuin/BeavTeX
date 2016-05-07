@@ -313,14 +313,12 @@
 \def\copyrightpage{
   \begin{singlespacing}
   \thispagestyle{empty}
-  % Thesis guide demands "10 returns from first line." It's lame,
-  % but we'll do it that way
-  \strut\\\strut\\\strut\\\strut\\\strut\\
-  \\\strut\\\strut\\\strut\\\strut\\
   \begin{center}
+    \vspace*{\stretch{1}}
     ${}^\copyright$Copyright by \@author\\
     \@submitdate\\
     All Rights Reserved
+    \vspace{\stretch{2}}
   \end{center}
   \end{singlespacing}
   \newpage
